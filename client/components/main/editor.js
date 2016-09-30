@@ -10,7 +10,7 @@ Template.editor.onRendered(() => {
       search(term, callback) {
         callback(Emoji.values.map((emoji) => {
           return emoji.includes(term) ? emoji : null;
-        }));
+        }).filter(Boolean));
       },
       template(value) {
         const imgSrc = Emoji.baseImagePath + value;
@@ -31,7 +31,7 @@ Template.editor.onRendered(() => {
         callback(currentBoard.activeMembers().map((member) => {
           const username = Users.findOne(member.userId).username;
           return username.includes(term) ? username : null;
-        }));
+        }).filter(Boolean));
       },
       template(value) {
         return value;
@@ -43,6 +43,8 @@ Template.editor.onRendered(() => {
     },
   ]);
 });
+
+import sanitizeXss from 'xss';
 
 // XXX I believe we should compute a HTML rendered field on the server that
 // would handle markdown, emoji and user mentions. We can simply have two
@@ -86,7 +88,7 @@ Blaze.Template.registerHelper('mentions', new Template('mentions', function() {
     content = content.replace(fullMention, Blaze.toHTML(link));
   }
 
-  return HTML.Raw(content);
+  return HTML.Raw(sanitizeXss(content));
 }));
 
 Template.viewer.events({

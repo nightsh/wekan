@@ -19,13 +19,13 @@ views, and more.
 Since it is a free software, you don’t have to trust us with your data and can
 install Wekan on your own computer or server. In fact we encourage you to do
 that by providing one-click installation on Heroku or [Sandstorm]
-[sandstorm_market] platforms and verified [Docker][docker_image] images.
+[sandstorm_market] platforms and verified [Docker][docker_image] images. You can
+also install Wekan on the following Platforms:
 
 [![Deploy][heroku_button]][heroku_deploy]
-
 [![SignUp][indiehosters_button]][indiehosters_saas]
-
 [![Deploy to Scalingo][scalingo_button]][scalingo_deploy]
+[![Install on Cloudron][cloudron_button]][cloudron_install]
 
 Wekan is released under the very permissive [MIT license](LICENSE), and made
 with [Meteor](https://www.meteor.com).
@@ -44,3 +44,5 @@ with [Meteor](https://www.meteor.com).
 [indiehosters_saas]: https://indiehosters.net/shop/product/wekan-20
 [scalingo_button]: https://cdn.scalingo.com/deploy/button.svg
 [scalingo_deploy]: https://my.scalingo.com/deploy?source=https://github.com/wekan/wekan#master
+[cloudron_button]: https://cloudron.io/img/button.svg
+[cloudron_install]: https://cloudron.io/button.html?app=io.wekan.cloudronapp
